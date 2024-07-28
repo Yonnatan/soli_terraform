@@ -27,3 +27,8 @@ variable "key-pair" {
   description = "key-pair to use on this machine"
   type        = string
 }
+variable "public_ip" {
+  description = "should public IP be associeted"
+  type        = bool
+  default = false
+}

@@ -8,7 +8,12 @@ resource "aws_lb" "main" {
   enable_deletion_protection = false
 
   tags = {
-    Name = var.alb_name
+    Name                         = var.alb_name
+    "ingress.k8s.aws/resource"   = "LoadBalancer"
+    "ingress.k8s.aws/stack"      = "test-group"
+    "kubernetes.io/ingress-name" = "default/web-server-ingress"
+    "kubernetes.io/cluster"      = var.cluster_name
+    "elbv2.k8s.aws/cluster"      = var.cluster_name
   }
 }
 

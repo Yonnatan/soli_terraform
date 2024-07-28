@@ -37,7 +37,7 @@ resource "helm_release" "cert_manager" {
   chart            = "cert-manager"
   namespace        = "cert-manager"
   create_namespace = true
-  version          = "v1.11.0"  # Specify a version
+  version          = "v1.11.0" # Specify a version
 
   set {
     name  = "installCRDs"
@@ -118,6 +118,6 @@ resource "helm_release" "aws_load_balancer_controller" {
 resource "kubectl_manifest" "web_server_ingress" {
   yaml_body = templatefile("${path.module}/deployments/web-server-ingress-resource.yaml", {
     cluster_namespace = var.cluster_namespace
-    alb_arn = var.alb_arn
+    alb_arn           = var.alb_arn
   })
 }

@@ -1,7 +1,7 @@
 variable "alb_name" {
   description = "Name of the ALB"
   type        = string
-  default     = "Test ALB"
+  default     = "tester"
 }
 
 variable "vpc_id" {
@@ -12,4 +12,9 @@ variable "vpc_id" {
 variable "public_subnet_ids" {
   description = "List of public subnet IDs"
   type        = list(string)
+}
+
+variable "cluster_name" {
+  description = "kubernetes cluster"
+  type        = string
 }

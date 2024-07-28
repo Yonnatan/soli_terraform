@@ -28,15 +28,15 @@ module "vpc" {
   )
 
   public_subnet_tags = var.alb_controller_subnet_tags ? {
-    "kubernetes.io/role/elb" = "1"
-    "kubernetes.io/cluster/Tester" = "shared"
-    "Type" = "Public"
+    "kubernetes.io/role/elb"       = "1"
+    "kubernetes.io/cluster/tester" = "shared"
+    "Type"                         = "Public"
   } : {}
 
   private_subnet_tags = var.alb_controller_subnet_tags ? {
     "kubernetes.io/role/internal-elb" = "1"
-    "kubernetes.io/cluster/Tester" = "shared"
-    "Type" = "Private"
+    "kubernetes.io/cluster/tester"    = "shared"
+    "Type"                            = "Private"
   } : {}
 
 }

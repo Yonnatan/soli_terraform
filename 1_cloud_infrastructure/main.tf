@@ -21,9 +21,10 @@ provider "kubectl" {
 # ALB Module
 module "alb" {
   source            = "./alb"
-  alb_name          = "Tester"
+  alb_name          = "tester"
   vpc_id            = var.vpc_id
   public_subnet_ids = var.public_subnet_ids
+  cluster_name      = var.cluster_name
 }
 
 # CloudFront Module
@@ -35,7 +36,7 @@ module "cloudfront" {
 # EKS Module
 module "eks" {
   source            = "./eks"
-  eks_cluster_name  = "Tester"
+  eks_cluster_name  = "tester"
   vpc_id            = var.vpc_id
   aws_region        = var.aws_region
   subnet_ids        = var.private_subnet_ids

@@ -18,6 +18,12 @@ variable "private_subnet_ids" {
   type        = list(string)
 }
 
+variable "cluster_name" {
+  description = "The namespace where we wish to deploy everything"
+  type        = string
+  default     = "tester"
+}
+
 variable "cluster_namespace" {
   description = "The namespace where we wish to deploy everything"
   type        = string
