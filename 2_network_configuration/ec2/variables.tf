@@ -30,5 +30,5 @@ variable "key-pair" {
 variable "public_ip" {
   description = "should public IP be associeted"
   type        = bool
-  default = false
+  default     = false
 }

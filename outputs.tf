@@ -12,12 +12,12 @@ output "ec2_2_private_ip" {
   value       = module.ec2_2.private_ip
   description = "The private IP of EC2 instance 2"
 }
-
+/*
 output "cloudfront_domain_name" {
   value       = module.cloud_infrastructure.cloudfront_domain_name
   description = "The domain name of the CloudFront distribution"
 }
-
+*/
 output "vpc1_to_vpc2_endpoint" {
   value       = module.private_link_vpc1_to_vpc2.vpc_endpoint_dns_name
   description = "The DNS names of the VPC Endpoint from VPC1 to VPC2"

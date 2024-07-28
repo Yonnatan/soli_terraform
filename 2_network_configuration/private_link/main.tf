@@ -49,7 +49,7 @@ resource "aws_vpc_endpoint" "endpoint" {
   subnet_ids         = var.subnet_ids
   security_group_ids = var.security_group_ids
 
-    tags = {
+  tags = {
     Name = "VPC-Endpoint-${var.name_suffix}"
   }
 }
